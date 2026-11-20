@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <path d="M8 14.5c0-.8.7-1.5 1.5-1.5h3l5.6-4.4c.7-.5 1.6-.1 1.6.8v17.2c0 .9-.9 1.3-1.6.8L12.5 23h-3c-.8 0-1.5-.7-1.5-1.5z" fill="url(#session-sounds-speaker)"/>
+  <path d="M23 14.4a5 5 0 0 1 0 7.2m3-10.2a9.3 9.3 0 0 1 0 13.2" stroke="#6D93EA" stroke-width="1.8" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="session-sounds-speaker" x1="10" y1="10" x2="19" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#81BAF6"/>
+      <stop offset="1" stop-color="#5266D7"/>
+    </linearGradient>
+  </defs>
+</svg>

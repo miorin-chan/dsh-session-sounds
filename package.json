@@ -1,0 +1,43 @@
+{
+  "name": "dsh-session-sounds",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Plays distinct sounds in the macOS desktop app for successful replies, questions, and approval requests.",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "audio",
+    "notifications",
+    "macos"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "AGENTS.md",
+    "AGENTS.local.md",
+    "docs/README.md",
+    "README.zh.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -14,4 +14,6 @@
 
 Markdown 用 `docs/scripts/reflow md <path>` 重排，命令需要 Python 3.11 或更新版本。
 每个检出目录运行一次 `prek install`。
+在 DSH 沙箱内提交时，用 `PREK_HOME="${TMPDIR:?}/prek-dsh" git commit -m "<commit message>"`，
+让 reflow 钩子照常运行，并把 `prek` 的缓存和日志写到可写的临时目录。
 保持生成的 [AGENTS.md](AGENTS.md) 与工作区模板一致。

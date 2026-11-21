@@ -9,8 +9,17 @@
 [index.js](index.js) 是 Host 入口。
 用 Cordis 的会话事件和请求中间件触发播放，用 `ctx.effect` 管理播放进程和定时器。
 [test/host.test.mjs](test/host.test.mjs) 覆盖事件筛选、请求透传、提示音的合并及清理。
-插件为纯 JavaScript，无构建步骤。
+当前实现为纯 JavaScript，无构建步骤。
 升级 DSH 后，按项目文档核对事件接入和桌面音频输出。
+
+## 开发约束
+
+- 新增实现用 TypeScript，复用与目标 DSH 版本匹配的官方类型，在接口、配置和事件中保留类型信息，并同步维护类型依赖。
+- 只用 DSH 支持的插件 API 和扩展点实现新行为。
+  禁止修改 DSH 源码或安装产物，也禁止用全局猴子补丁或覆写内部实现绕过边界。
+  扩展点不足时说明缺口，并将实现限制在插件能力内。
+
+## Markdown
 
 Markdown 用 `docs/scripts/reflow md <path>` 重排，命令需要 Python 3.11 或更新版本。
 每个检出目录运行一次 `prek install`。

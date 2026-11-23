@@ -9,9 +9,9 @@
 只展示用户当下需要知道或操作的内容，细节按需展开。
 
 [Host 源码](src/host/index.ts) 用 Cordis 的会话事件和请求中间件触发播放，用 `ctx.effect` 管理播放进程和定时器。
-[构建脚本](scripts/build.mjs) 生成 `index.js`。
+[构建脚本](scripts/build.mts) 生成 `index.js`。
 Git 忽略该文件，npm 打包时包含它。DSH 类型依赖用 `import type` 引入。
-[test/host.test.mjs](test/host.test.mjs) 覆盖事件筛选、请求透传、提示音的合并及清理。
+[test/host.test.mts](test/host.test.mts) 覆盖事件筛选、请求透传、提示音的合并及清理。
 修改源码与升级 DSH 后，按项目文档运行构建和检查。
 升级时同时核对事件接入和桌面音频输出。
 
@@ -39,3 +39,6 @@ Markdown 用 `docs/scripts/reflow md <path>` 重排，命令需要 Python 3.11 �
 在 DSH 沙箱内提交时，用 `PREK_HOME="${TMPDIR:?}/prek-dsh" git commit -m "<commit message>"`，
 让 reflow 钩子照常运行，并把 `prek` 的缓存和日志写到可写的临时目录。
 保持生成的 [AGENTS.md](AGENTS.md) 与工作区模板一致。
+
+`npm run build:tools` 从 `scripts/` 下的 `.mts` 生成同路径 `.mjs`，Git 跟踪 TypeScript 源码。
+Node.js 22.18 或更新版本直接运行 `.test.mts`。

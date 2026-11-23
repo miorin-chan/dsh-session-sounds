@@ -2,3 +2,7 @@ node_modules/
 .pnpm-store/
 *.tgz
 /index.js
+
+# Compiled tooling
+/scripts/build.mjs
+/scripts/sync-types.mjs

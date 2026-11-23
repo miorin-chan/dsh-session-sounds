@@ -22,8 +22,13 @@ import { fileURLToPath } from 'node:url'
 const require = createRequire(import.meta.url)
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
+interface Versions {
+  dsh: string
+  cordis: string
+}
+
 /** The CLI version and the Cordis version the installation carries. */
-export function installedVersions() {
+export function installedVersions(): Versions {
   const installDir = process.env.DSH_INSTALL_DIR
   if (!installDir) throw new Error('DSH_INSTALL_DIR is unset; run this inside a DSH shell.')
   try {
@@ -55,9 +60,9 @@ export function installedVersions() {
 
 async function main() {
   const { dsh: dshVersion, cordis: cordisVersion } = installedVersions()
-  const expected = (name) => (name === '@deepseek-ai/cordis' ? cordisVersion : dshVersion)
+  const expected = (name: string) => (name === '@deepseek-ai/cordis' ? cordisVersion : dshVersion)
 
-  const pkg = JSON.parse(await readFile(resolve(ROOT, 'package.json'), 'utf8'))
+  const pkg = JSON.parse(await readFile(resolve(ROOT, 'package.json'), 'utf8')) as { devDependencies?: Record<string, string> }
   const devDependencies = pkg.devDependencies ?? {}
   const pinned = Object.keys(devDependencies).filter((name) => name.startsWith('@deepseek-ai/'))
 
@@ -91,7 +96,7 @@ async function main() {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   await main().catch(error => {
-    console.error(error.message)
+    console.error(error instanceof Error ? error.message : String(error))
     process.exitCode = 1
   })
 }

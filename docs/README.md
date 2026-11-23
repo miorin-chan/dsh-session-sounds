@@ -9,7 +9,7 @@
 升级 DSH 后先执行 `node scripts/sync-types.mjs` 查看新的固定版本。
 
 用 `node --check index.js` 验证运行时语法，用 `npm pack --dry-run --json` 核对发布文件。
-在工作区根目录运行 `node tools/new-dsh-plugin/cli.mjs --check plugins/dsh-session-sounds` 校验骨架。
+在工作区根目录运行 `node tools/new-dsh-plugin/cli.mts --check plugins/dsh-session-sounds` 校验骨架。
 
 桌面验证时，从前台发起一轮对话，再切换到其他应用。
 主会话成功结束应响起 Glass。另开会话请求助手用提问工具询问偏好，问题出现时停留片刻，应能听到 Ping。

@@ -9,8 +9,8 @@
 只展示用户当下需要知道或操作的内容，细节按需展开。
 
 [Host 源码](src/host/index.ts) 用 Cordis 的会话事件和请求中间件触发播放，用 `ctx.effect` 管理播放进程和定时器。
-[构建脚本](scripts/build.mjs) 生成入库的 [index.js](index.js)。
-DSH 类型依赖用 `import type` 引入。
+[构建脚本](scripts/build.mjs) 生成 `index.js`。
+Git 忽略该文件，npm 打包时包含它。DSH 类型依赖用 `import type` 引入。
 [test/host.test.mjs](test/host.test.mjs) 覆盖事件筛选、请求透传、提示音的合并及清理。
 修改源码与升级 DSH 后，按项目文档运行构建和检查。
 升级时同时核对事件接入和桌面音频输出。

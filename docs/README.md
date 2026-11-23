@@ -3,7 +3,7 @@
 用户说明见 [README.zh.md](../README.zh.md)。
 开发约定见 [AGENTS.md](../AGENTS.md) 与 [AGENTS.local.md](../AGENTS.local.md)。
 
-在插件目录运行 `npm install` 或 `pnpm install` 安装开发依赖并构建。
+新检出后在插件目录运行 `npm ci`，安装锁定的开发依赖并生成运行文件。
 改动源码后用 `npm run build` 更新产物，用 `npm test` 重新构建并测试。
 在 DSH shell 运行 `npm run check`，依次核对产物、运行测试、检查类型并核对当前 DSH 的类型包版本。
 升级 DSH 后先执行 `node scripts/sync-types.mjs` 查看新的固定版本。

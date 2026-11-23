@@ -8,11 +8,12 @@
 插件详情页要整体短、每项一眼能懂。
 只展示用户当下需要知道或操作的内容，细节按需展开。
 
-[index.js](index.js) 是 Host 入口。
-用 Cordis 的会话事件和请求中间件触发播放，用 `ctx.effect` 管理播放进程和定时器。
+[Host 源码](src/host/index.ts) 用 Cordis 的会话事件和请求中间件触发播放，用 `ctx.effect` 管理播放进程和定时器。
+[构建脚本](scripts/build.mjs) 生成入库的 [index.js](index.js)。
+DSH 类型依赖用 `import type` 引入。
 [test/host.test.mjs](test/host.test.mjs) 覆盖事件筛选、请求透传、提示音的合并及清理。
-当前实现为纯 JavaScript，无构建步骤。
-升级 DSH 后，按项目文档核对事件接入和桌面音频输出。
+修改源码与升级 DSH 后，按项目文档运行构建和检查。
+升级时同时核对事件接入和桌面音频输出。
 
 ## 复用 DSH 原生界面
 

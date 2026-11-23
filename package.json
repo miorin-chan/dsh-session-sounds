@@ -1,7 +1,6 @@
 {
   "name": "@miorin/dsh-session-sounds",
   "version": "0.1.0",
-  "private": true,
   "license": "MIT",
   "description": "Plays distinct sounds in the macOS desktop app for successful replies, questions, and approval requests.",
   "type": "module",
@@ -39,5 +38,8 @@
   },
   "scripts": {
     "test": "node --test"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,6 +1,7 @@
 {
   "meta": {
     "title": "Session sounds",
-    "description": "Plays distinct sounds in the macOS desktop app when a main conversation finishes a reply successfully or is waiting for an answer or approval."
+    "description": "Plays distinct sounds in the macOS desktop app when a main conversation finishes a reply successfully or is waiting for an answer or approval.",
+    "detail": "docs/DETAIL.md"
   }
 }

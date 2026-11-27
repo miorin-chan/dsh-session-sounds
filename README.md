@@ -9,7 +9,7 @@ Plays macOS system sounds through the desktop app, including while you’re in a
 
 Requires DeepSeek Harness Desktop 0.2.2-rc.5 or newer on macOS.
 
-Run `npm ci` in the source checkout to install the development dependencies and build the plugin.
+Run `pnpm install` in the source checkout to install dependencies and build the plugin.
 In **Plugins** → **Add plugin**, select this directory.
 Sounds start when **Session sounds** is enabled.
 Disable the plugin to mute both sounds, or adjust the macOS output volume.

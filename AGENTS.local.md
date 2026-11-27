@@ -2,11 +2,16 @@
 
 本文件补充 [AGENTS.md](AGENTS.md)，记录会话声音提醒插件的开发约定。
 
-[README.md](README.md) 是英文使用说明，[README.zh.md](README.zh.md) 是中文使用说明。
-项目文档入口为 [docs/README.md](docs/README.md)。
-插件管理器元数据存放于 `locale/*.json`，同步维护 `en zh ja de es fr pt ru`。
-插件详情页要整体短、每项一眼能懂。
-只展示用户当下需要知道或操作的内容，细节按需展开。
+## 项目文档
+
+- [README.md](README.md) 是英文使用说明，[README.zh.md](README.zh.md) 是中文使用说明。
+- [DESIGN.md](DESIGN.md) 是产品设计入口，修改产品行为前先阅读它，了解用户问题、目标体验、边界与可观察的成功标准。
+- 实现契约、方案与实际验证记录与产品设计分开，通过[项目文档索引](docs/README.md)查阅。
+- `CHANGELOG.md` 按版本记录变化；进度、排期与调试记录留在任务记录中，
+  任务收尾前将已确认的产品决定写回 [DESIGN.md](DESIGN.md) 并留链接。
+- 插件管理器元数据存放于 `locale/*.json`，同步维护 `en zh ja de es fr pt ru`。
+- 插件详情页要整体短、每项一眼能懂。
+  只展示用户当下需要知道或操作的内容，细节按需展开。
 
 [Host 源码](src/host/index.ts) 用 Cordis 的会话事件和请求中间件触发播放，用 `ctx.effect` 管理播放进程和定时器。
 [构建脚本](scripts/build.mts) 生成 `index.js`。

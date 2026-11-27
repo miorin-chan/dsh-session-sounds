@@ -1,7 +1,8 @@
 # 项目文档
 
-用户说明见 [README.zh.md](../README.zh.md)。
-开发约定见 [AGENTS.md](../AGENTS.md) 与 [AGENTS.local.md](../AGENTS.local.md)。
+- [产品设计](../DESIGN.md)：问题、目标体验、边界与成功标准。
+- 用户说明见 [README.zh.md](../README.zh.md)。
+- 开发约定见 [AGENTS.md](../AGENTS.md) 与 [AGENTS.local.md](../AGENTS.local.md)。
 
 新检出后在插件目录运行 `npm ci`，安装锁定的开发依赖并生成运行文件。
 改动源码后用 `npm run build` 更新产物，用 `npm test` 重新构建并测试。
